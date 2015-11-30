@@ -20,7 +20,7 @@ class main {
 				break;
 			case 2: // load game
 				// be able to load games/battles
-				System.out.println("wow i told you this isnt functional you dense mf\n"
+				System.out.println("wow i told you this isnt functional you dense motherf\n"
 						+ "we done");
 				break;
 			case 3: // create character
