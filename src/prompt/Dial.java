@@ -11,10 +11,13 @@ public class Dial {
 			"Create character",
 			"Existing character",
 			"Exit game"};
+	public static String[] battleoption = {"null",
+			"no"};
 	public static String[] itemlist = {"null",
     		"Wooden Sword", 
     		"Iron Sword",
     		"Greatsword"};
+	
 	public Dial(String newname) {
 		name = newname;
 	}
@@ -25,5 +28,9 @@ public class Dial {
 			System.out.println(i+": "+mop[i]);
 		} System.out.print("==>");
 		return input.nextInt();
+	}
+	
+	public static void battleScene() {
+		
 	}
 }

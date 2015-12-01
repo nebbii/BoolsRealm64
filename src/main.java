@@ -1,6 +1,7 @@
 //import prompt.Dialog;
 import mob.Player;
 import prompt.Dial;
+import mob.MobBuild;
 
 class main {
 	
@@ -15,11 +16,10 @@ class main {
 			int minput = Dial.showMenu("Welcome to Bool's Realm 64!", Dial.mmoption);
 			switch(minput){
 			case 1: // play game
-				System.out.println("You say \"ravioli ravioli give me the game\".\n");
+				System.out.println("You say \"ravioli ravioli give me the game\".");
 				c="battle";
 				break;
 			case 2: // load game
-				// be able to load games/battles
 				System.out.println("wow i told you this isnt functional you dense mf\n"
 						+ "we done");
 				break;
@@ -34,7 +34,7 @@ class main {
 					System.out.println("List of Existing Characters:");
 					for(int i=0;i<playerList.length;i++) {
 						if(playerList[i]!=null){
-							System.out.println(playerList[i].name+": Is "+playerList[i].age+" years old, favorite weapon is "+mob.Player.itemlist[playerList[i].weapon]);
+							System.out.println(playerList[i].name+": Is "+playerList[i].age+" years old, favorite weapon is "+mob.Player.itemlist[playerList[i].weapon][0]);
 						}
 					}
 				}
@@ -46,10 +46,29 @@ class main {
 				break;
 			}
 			
-			while(c=="battle") {
-				System.out.println("who sent these babies to fight ?\n");
-				c="mmenu";
+		}
+		// Battle scene
+		while(c=="battle") {
+			int turncount = 0;
+			MobBuild[] moblist = new MobBuild[10];
+			moblist[1] = new MobBuild("Eggplant1",40);
+			int mobc = 0;
+			
+			// count amount of mobs
+			for(int i=0;i<moblist.length; i++) {
+				if(moblist[i]!=null){
+					mobc++;
+				}
 			}
+			System.out.println("\n"+mobc+" monster"+((mobc != 1) ? "s" : "")+" appeared!");
+			int minput = Dial.showMenu("What do you do?", Dial.battleoption);
+			
+			if(minput==1) {
+				System.out.println("ok");
+				c="end";
+			}
+			//System.out.println("who sent these babies to fight ?\n");
+			//c="mmenu";
 		}
 		
 		System.out.println("The game has ended.");

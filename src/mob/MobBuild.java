@@ -1,10 +1,10 @@
 package mob;
 
-public class mob_EggPlant {
+public class MobBuild {
 	public String name;
 	public int hp;
 	
-	public mob_EggPlant(String givenname, int givenhp) {
+	public MobBuild(String givenname, int givenhp) {
 		name = givenname;
 		hp = givenhp;
 	}
